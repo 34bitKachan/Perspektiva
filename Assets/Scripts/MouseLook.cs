@@ -24,10 +24,11 @@ public class MouseLook : MonoBehaviour
 		Cursor.visible = false;
 			
 		Application.runInBackground = true;
-		sensitivityHor = SaveSettingsGame.getSensivityMouse();
-		sensitivityVert = SaveSettingsGame.getSensivityMouse();
-
-    }
+		if(sensitivityHor == 0){
+			sensitivityHor += 2.5f;
+			sensitivityVert += 2.5f;
+		}
+	}
 	void LateUpdate() {
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
