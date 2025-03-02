@@ -8,6 +8,13 @@ public class ObjController : MonoBehaviour
     public GameObject Obj;
     public GameObject Pointer;
     public GameObject UIobj;
+
+    public GameObject eff1;
+    public GameObject eff2;
+    public GameObject eff3;
+
+    public ParticleSystem pr1;
+
     bool flagObj;
     int mode;
     public float speedpod =5;
@@ -42,7 +49,7 @@ Vector3 scll;
                             Obj.layer = LayerMask.NameToLayer("Ignore Raycast");
                              flagObj = true;
                              UIobj.SetActive(false);  
-                            
+                            eff1.SetActive(true);
                              mode = 1;
                         }
                         if(Input.GetMouseButtonDown(1))
@@ -51,6 +58,7 @@ Vector3 scll;
                             Obj.GetComponent<Rigidbody>().useGravity = !Obj.GetComponent<Rigidbody>().useGravity;
                              flagObj = true;
                              UIobj.SetActive(false);  
+                             eff2.SetActive(true);
                               mode = 2;
                         }
 
@@ -86,6 +94,7 @@ Vector3 scll;
                              Obj = null;
                             flagObj = false;
                              mode = 0; 
+                             eff1.SetActive(false);
                         }
 
                 break;
@@ -98,6 +107,7 @@ Vector3 scll;
                              Obj = null;
                              flagObj = false;
                              mode = 0; 
+                             eff2.SetActive(false);
                         }
                 break;
             }

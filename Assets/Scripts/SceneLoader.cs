@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
- 
+    public int sceneIDtrigger;
     public void Load(int IDscene)
     {
         SceneManager.LoadScene(IDscene);
@@ -13,5 +13,12 @@ public class SceneLoader : MonoBehaviour
     public void ExitApp()
     {
         Application.Quit();
+    }
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.tag == "Player")
+        {
+           Load(sceneIDtrigger);
+            
+        }
     }
 }
