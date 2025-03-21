@@ -14,4 +14,8 @@
 4. Стартовая сцена находится по пути Assets/Scenes/Menu.unity
 5. Запустите сцену через Unity Editor по кнопке "Play"
    
+## Создатели 
+1. https://github.com/NerniGameStudios/Perspektiva/tree/NGS_develop
+2. https://github.com/34bitKachan/Perspektiva
+
 Спасибо за внимание к проекту "Perspektiva". Мы надеемся, что вам понравится играть в эту игру.
