@@ -39,10 +39,12 @@ Vector3 scll;
 
         if(!flagObj)
         {
-            if(hit.collider.gameObject.tag == "Obj")
+            if(hit.collider.gameObject.tag == "Obj" || hit.collider.gameObject.tag == "Lens" || hit.collider.gameObject.tag == "ObjS")
              {
                       UIobj.SetActive(true);   
-                     if(Input.GetMouseButtonDown(0))
+                     if(hit.collider.gameObject.tag != "ObjS")
+                     {
+                        if(Input.GetMouseButtonDown(0))
                         {
                              Obj = hit.collider.gameObject;
                              //Obj.GetComponent<BoxCollider>().enabled = false;
@@ -52,6 +54,9 @@ Vector3 scll;
                             eff1.SetActive(true);
                              mode = 1;
                         }
+                     }
+                     
+
                         if(Input.GetMouseButtonDown(1))
                         {
                              Obj = hit.collider.gameObject;

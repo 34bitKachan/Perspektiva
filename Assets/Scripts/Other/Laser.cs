@@ -18,11 +18,10 @@ public class Laser : MonoBehaviour
         Ray ray = new Ray(_start.transform.position,-transform.forward);
         RaycastHit hit;
         Physics.Raycast(ray,out hit);
-
-      
-
-       Buff = hit.collider.gameObject;
-        if(hit.collider.gameObject.tag == "Finish"){_end.GetComponent<ElectricalSystem>().Active =true;lr.SetActive(true);}
+        Buff = hit.collider.gameObject;
+        if(hit.collider.gameObject.tag == "Finish"){
+            _end.GetComponent<ElectricalSystem>().Active =true;lr.SetActive(true);
+        }
         else
         {
             lr.SetActive(false);

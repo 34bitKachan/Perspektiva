@@ -13,9 +13,35 @@ public class LiftController : MonoBehaviour
     public GameObject Player;
     public float speed = 1;
     bool flag =false;
+
+    public bool invert = false;
     
     void FixedUpdate()
     {
+        if(invert)
+        {
+            if(!elk.Active)
+        {
+            if(_plat.transform.position.y <= _end.transform.position.y)
+            {
+                _plat.transform.position += Vector3.up * speed * Time.fixedDeltaTime;
+                
+                //if(flag)Player.transform.position = new Vector3(Player.transform.position.x,PlayerFixt.transform.position.y,Player.transform.position.z);
+            }
+            
+        }
+        if(elk.Active)
+        {
+            if(_plat.transform.position.y >= _start.transform.position.y)
+            {
+                _plat.transform.position -= Vector3.up * speed * Time.fixedDeltaTime;
+               // if(flag)Player.transform.position = new Vector3(Player.transform.position.x,PlayerFixt.transform.position.y,Player.transform.position.z);
+            }
+            
+        }
+        }
+        else
+        {
         if(elk.Active)
         {
             if(_plat.transform.position.y <= _end.transform.position.y)
@@ -35,6 +61,10 @@ public class LiftController : MonoBehaviour
             }
             
         }
+        }
+
+
+        
         
     }
     private void OnCollisionEnter(Collision other) {

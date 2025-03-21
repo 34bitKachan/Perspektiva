@@ -742,7 +742,7 @@ MonoBehaviour:
   _electricalSystems: []
   _scaleActivMin: 0.3
   _scaleActivMax: 1.5
-  _distanceDown: 1.4
+  _distanceDown: 0.15
   _timeDown: 0.06
   _activeButton: 0
 --- !u!65 &4444933459208360524
